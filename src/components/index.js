@@ -9,6 +9,7 @@ import Login from "./Login/Login";
 import Input from "./Input/Input";
 import Button from "./Button/Button";
 import AuthLayout from "./AuthLayout/AuthLayout";
+import RTE from "./RTE/RTE";
 
 export {
     Header,
@@ -22,4 +23,5 @@ export {
     Input,
     Button,
     AuthLayout,
+    RTE
 }
