@@ -87,7 +87,7 @@ export class Service {
                 queries,
             )
         } catch (error) {
-            console.log("Appwrite serive :: getPosts :: error", error);
+            console.log("Appwrite serivce :: getPosts :: error", error);
             return false
         }
     }

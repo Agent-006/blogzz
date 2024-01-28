@@ -12,7 +12,7 @@ export default function Post() {
 
   const userData = useSelector((state) => state.auth.userData);
 
-  const isAuthour = post && userData ? post.userId = userData.$id : false;
+  const isAuthour = post && userData ? post.userId === userData.$id : false;
 
   useEffect(() => {
     if (slug) {
@@ -20,7 +20,7 @@ export default function Post() {
         if (post) setPost(post);
         else navigate("/");
       });
-    } else navigate('/')
+    } else navigate("/");
   }, [slug, navigate]);
 
   const deletePost = () => {
