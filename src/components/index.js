@@ -8,8 +8,11 @@ import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import Input from "./Input/Input";
 import Button from "./Button/Button";
-import AuthLayout from "./AuthLayout/AuthLayout";
+import Protected from "./AuthLayout/AuthLayout";
 import RTE from "./RTE/RTE";
+import PostCard from "./PostCard/PostCard";
+import PostForm from "./post-form/PostForm";
+
 
 export {
     Header,
@@ -22,6 +25,8 @@ export {
     Login,
     Input,
     Button,
-    AuthLayout,
-    RTE
+    Protected,
+    RTE,
+    PostCard,
+    PostForm,
 }

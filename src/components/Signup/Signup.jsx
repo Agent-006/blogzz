@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Input, Logo } from "../index";
+
 import authService from "../../appwrite/auth";
 import { login as authLogin } from "../../store/authSlice";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import Logo from "../Logo/Logo";
 
 function Signup() {
   const navigate = useNavigate();
@@ -12,14 +15,14 @@ function Signup() {
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
 
-  const signup = async (data) => {
+  const createAccount = async (data) => {
     setError("");
     try {
       const userAccount = await authService.createAccount(data);
       if (userAccount) {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(authLogin(userData));
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       setError(error.message);
@@ -73,6 +76,7 @@ function Signup() {
             />
             <Input
               label="Password: "
+              type="password"
               placeholder="Enter your password"
               {...register("password", {
                 required: true,

@@ -70,7 +70,7 @@ export class Service {
         try {
             return await this.databases.getDocument(
                 conf.appwriteDatabaseId,
-                conf.appwriteProjectId,
+                conf.appwriteCollectionId,
                 slug,
             )
         } catch (error) {
@@ -79,7 +79,7 @@ export class Service {
         }
     }
 
-    async getPosts(queries = [Query.equal('status', 'active')]) {
+    async getPosts(queries = [Query.equal("status", "active")]){
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
@@ -87,7 +87,7 @@ export class Service {
                 queries,
             )
         } catch (error) {
-            console.log("Appwrite service :: getPosts :: error", error);
+            console.log("Appwrite serive :: getPosts :: error", error);
             return false
         }
     }

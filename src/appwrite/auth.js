@@ -40,9 +40,9 @@ export class AuthService {
 
     async getCurrentUser() {
         try {
-            return await this.account.get()
+            return await this.account.get();
         } catch (error) {
-            throw error;
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
 
         return null;
@@ -60,5 +60,3 @@ export class AuthService {
 const authService = new AuthService();
 
 export default authService;
-
-
